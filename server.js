@@ -51,7 +51,7 @@ app.get('/namecheap', async (req, res) => {
   try {
     const { ApiUser, ApiKey, UserName, ClientIp } = req.query
     const domains = await fetchAllDomains(ApiUser, ApiKey, UserName, ClientIp)
-    res.json({ domains })
+    res.json(domains)
   } catch (error) {
     res.status(500).json({ error: error.message })
   }
